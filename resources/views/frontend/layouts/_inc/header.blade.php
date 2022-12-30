@@ -9,7 +9,7 @@
                             <div class="logo">
                                 {{-- <a href="index.html" class="logo__black"><img src="{{ asset('/') }}frontend/assets/img/logo/logo_black.png" alt=""></a> --}}
                                 {{-- <a href="index.html" class="logo__white"><img src="{{ asset('/') }}frontend/assets/img/logo/logo_white.png" alt=""></a> --}}
-                                <a href="index.html" class="text-black fw-bold display-6"><i>Linkon's</i><span class="text-primary">Yard</span></a>
+                                <a href="{{ route('front.home') }}" class="text-black fw-bold display-6"><i>Linkon's</i><span class="text-primary">Yard</span></a>
 
                             </div>
                             <div class="navbar__wrap main__menu d-none d-xl-flex">
