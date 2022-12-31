@@ -11,12 +11,22 @@ class AdminProfileController extends Controller
 {
     public function adminProfile(){
         $userId = Auth::user()->id;
-        $profileInfo = User::find($userId);
+        $profileInfos = User::find($userId);
         return view('admin.profile.index', [
-            'profileInfo' => $profileInfo,
+            'profileInfos' => $profileInfos,
         ]);
     }
 
+    public function adminProfileEdit($id){
+        return view('admin.profile.edit', [
+            'profileInfo' => User::find($id),
+        ]);
+    }
+
+    public function adminProfileUpdate(Request $request, $id){
+        User::updateAdminProfile($request, $id);
+        return redirect()->route('admin.profile')->with('success', 'Profile updated Successfully');
+    }
 
 
 

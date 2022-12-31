@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\helper\Helper;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -23,6 +24,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'password',
         'phone',
         'role_type',
+        'description',
+        'image',
     ];
 
     /**
@@ -43,4 +46,33 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function updateAdminProfile($request, $id = null){
+
+        User::updateOrCreate(['id'=>$id],[
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'description' => $request->description,
+            'image' => Helper::uploadFile($request->image, 'admins', isset($id) ? User::find($id)->image : null),
+        ]);
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

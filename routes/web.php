@@ -21,7 +21,8 @@ Route::middleware(['auth', 'verified'])->group(function(){
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     // Admin profile route
     Route::get('/admin-profile', [AdminProfileController::class, 'adminProfile'])->name('admin.profile');
-    Route::get('/admin-profile-update', [AdminProfileController::class, 'adminProfileUpdate'])->name('admin.profile-update');
+    Route::get('/admin-profile-edit/{id}', [AdminProfileController::class, 'adminProfileEdit'])->name('admin.profile-edit');
+    Route::post('/admin-profile-update/{id}', [AdminProfileController::class, 'adminProfileUpdate'])->name('admin.profile-update');
 
 
 });
