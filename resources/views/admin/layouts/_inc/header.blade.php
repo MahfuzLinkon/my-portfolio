@@ -234,8 +234,16 @@
                                         <img src="{{ asset('/') }}admin/assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
                                     </span>
                 <span>
-                                        <span class="account-user-name">Dominic Keller</span>
-                                        <span class="account-position">Founder</span>
+                                        <span class="account-user-name">{{ Auth::user()->name }}</span>
+                                        <span class="account-position">
+                                            @if (Auth::user()->role_type == 1)
+                                                Admin
+                                            @elseif (Auth::user()->role_type == 2)
+                                                Modarator
+                                            @elseif (Auth::user()->role_type == 3)
+                                                User
+                                            @endif
+                                        </span>
                                     </span>
             </a>
             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
@@ -245,7 +253,7 @@
                 </div>
 
                 <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                <a href="{{ route('admin.profile') }}" class="dropdown-item notify-item">
                     <i class="mdi mdi-account-circle me-1"></i>
                     <span>My Account</span>
                 </a>

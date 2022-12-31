@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\AdminProfileController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\frontend\FrontendController;
 use App\Http\Controllers\ProfileController;
@@ -18,6 +19,11 @@ Route::get('/', [FrontendController::class, 'index'])->name('front.home');
 
 Route::middleware(['auth', 'verified'])->group(function(){
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+    // Admin profile route
+    Route::get('/admin-profile', [AdminProfileController::class, 'adminProfile'])->name('admin.profile');
+    Route::get('/admin-profile-update', [AdminProfileController::class, 'adminProfileUpdate'])->name('admin.profile-update');
+
+
 });
 
 

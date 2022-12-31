@@ -7,3 +7,4 @@
 <link rel="stylesheet" href="{{ asset('/') }}frontend/assets/css/default.css">
 <link rel="stylesheet" href="{{ asset('/') }}frontend/assets/css/style.css">
 <link rel="stylesheet" href="{{ asset('/') }}frontend/assets/css/responsive.css">
+<link rel="stylesheet" href="{{ asset('/') }}frontend/assets/css/all.css">

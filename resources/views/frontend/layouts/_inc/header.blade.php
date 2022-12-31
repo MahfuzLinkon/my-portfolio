@@ -1,4 +1,39 @@
-<header>
+<section class="user_menu">
+            <small>
+                <div class="navbar p-0" style="background-color: #EAE8E7;">
+                    <div class="container">
+                        <ul class="nav">
+                            <li><a href="" class="nav-link text-muted"><i class="fa-solid fa-address-card me-1"></i> My Account</a></li>
+                            <li class="">
+                                <div class="dropdown dropdown-small">
+                                      <a class="nav-link dropdown-toggle text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-solid fa-earth-oceania me-1"></i> Language: <span>English</span>
+                                      </a>
+        
+                                      <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">English</a></li>
+                                        <li><a class="dropdown-item" href="#">Bangla</a></li>
+                                        <li><a class="dropdown-item" href="#">German</a></li>
+                                      </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="nav">
+                            @if (Auth::check())
+                                <li><a href="" class="nav-link text-muted" onclick="event.preventDefault(); document.getElementById('logOutFromFront').submit()"> <i class="fa-solid fa-user-xmark me-1"></i> LogOut</a></li>
+                                <form action="{{ route('logout') }}" method="POST" id="logOutFromFront">@csrf</form>
+                            @else
+                                <li><a href="{{ route('register') }}" class="nav-link text-muted"> <i class="fa-solid fa-user-plus  me-1"></i> Register</a></li>
+                                <li><a href="{{ route('login') }}" class="nav-link text-muted"> <i class="fa-solid fa-user me-1"></i> Log In</a></li>
+                            @endif
+                            
+                        </ul>
+                    </div>
+                </div>
+            </small>
+    </section>
+
+<header >
     <div id="sticky-header" class="menu__area transparent-header">
         <div class="container "> 
             <div class="row">
@@ -12,6 +47,7 @@
                                 <a href="{{ route('front.home') }}" class="text-black fw-bold display-6"><i>Linkon's</i><span class="text-primary">Yard</span></a>
 
                             </div>
+
                             <div class="navbar__wrap main__menu d-none d-xl-flex">
                                 <ul class="navigation">
                                     <li class="active"><a href="index.html">Home</a></li>
@@ -30,6 +66,8 @@
                                         </ul>
                                     </li>
                                     <li><a href="contact.html">contact me</a></li>
+                                    
+                                    
                                 </ul>
                             </div>
                             <div class="header__btn d-none d-md-block">
@@ -42,11 +80,19 @@
                         <nav class="menu__box">
                             <div class="close__btn"><i class="fal fa-times"></i></div>
                             <div class="nav-logo">
-                                <a href="index.html" class="logo__black"><img src="{{ asset('/') }}frontend/assets/img/logo/logo_black.png" alt=""></a>
-                                <a href="index.html" class="logo__white"><img src="{{ asset('/') }}frontend/assets/img/logo/logo_white.png" alt=""></a>
+                                <a href="{{ route('front.home') }}" class="text-black fw-bold display-6"><i>Linkon's</i><span class="text-primary">Yard</span></a>
+                                {{-- <a href="index.html" class="logo__black"><img src="{{ asset('/') }}frontend/assets/img/logo/logo_black.png" alt=""></a> --}}
+                                {{-- <a href="index.html" class="logo__white"><img src="{{ asset('/') }}frontend/assets/img/logo/logo_white.png" alt=""></a> --}}
                             </div>
                             <div class="menu__outer">
                                 <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                                <div class="navbar">
+                                        <ul class="navbar-nav">
+                                            <li><a href="{{ route('login') }}" class="nav-link text-muted"> <i class="fa-solid fa-user me-1"></i> Log In</a></li>
+                                            <li><a href="" class="nav-link text-muted"> <i class="fa-solid fa-user-xmark me-1"></i> LogOut</a></li>
+                                            <li><a href="{{ route('register') }}" class="nav-link text-muted"> <i class="fa-solid fa-user-plus  me-1"></i> Register</a></li>
+                                        </ul>
+                                </div>
                             </div>
                             <div class="social-links">
                                 <ul class="clearfix">

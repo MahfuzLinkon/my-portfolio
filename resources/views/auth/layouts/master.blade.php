@@ -22,7 +22,7 @@
         <!-- end page -->
 
         <footer class="footer footer-alt">
-            2018 - <script>document.write(new Date().getFullYear())</script> © Hyper - Coderthemes.com
+            2021 - <script>document.write(new Date().getFullYear())</script> © Linkon'sYard - all right reserved by Mahfuzur Rahman
         </footer>
 
         <!-- bundle -->
@@ -30,6 +30,4 @@
         <script src="{{ asset('/') }}admin/assets/js/app.min.js"></script>
         
     </body>
-
-<!-- Mirrored from coderthemes.com/hyper/saas/pages-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 29 May 2022 14:58:28 GMT -->
 </html>
