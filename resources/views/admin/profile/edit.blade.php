@@ -40,7 +40,8 @@
                     <div class="row mt-3">
                         <label for="" class="col-md-3">Image</label>
                         <div class="col-md-9">
-                            <input type="file" name="image" class="form-control">
+                            <input type="file" id="image" name="image" class="form-control">
+                            <img src="{{ asset($profileInfo->image) }}" alt="" class="mt-2" id="showImage" style="height: 80px; width:80px">
                         </div>
                     </div>
 
@@ -58,4 +59,27 @@
     </div> <!-- end col-->
 </div>
 <!-- end row -->
+@endsection
+
+@section('script')
+<script>
+    // $(document).on('change', '#image', function(e){
+    //     var fileReader = new fileReader();
+    //     reader.onload = function(e){
+    //         $('#viewImage').attr('src', e.target.result);
+    //     }
+    //     reader.readAsDataURLz(e.target.files['0']);
+    // });
+
+    $(document).ready(function(){
+        $('#image').change(function(e){
+            var reader = new FileReader();
+            reader.onload = function(e){
+                $('#showImage').attr('src',e.target.result);
+            }
+            reader.readAsDataURL(e.target.files['0']);
+        });
+    });
+
+</script>
 @endsection

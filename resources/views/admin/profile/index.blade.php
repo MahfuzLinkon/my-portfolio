@@ -67,6 +67,9 @@
                                 <a href="{{ route('admin.profile-edit', ['id'=>$profileInfos->id ]) }}" type="button" class="btn btn-light">
                                     <i class="mdi mdi-account-edit me-1"></i> Update Profile
                                 </a>
+                                <a href="{{ route('admin.password-change') }}" type="button" class="btn btn-success">
+                                    <i class="mdi mdi-account-lock me-1"></i> Change Password
+                                </a>
                             </div>
                         </div> <!-- end col-->
                     </div> <!-- end row -->
