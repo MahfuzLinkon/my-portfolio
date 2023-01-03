@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\AdminProfileController;
 use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\admin\SliderController;
 use App\Http\Controllers\frontend\FrontendController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -26,6 +27,8 @@ Route::middleware(['auth', 'verified'])->group(function(){
     Route::get('/admin-password-change', [AdminProfileController::class, 'adminPasswordChange'])->name('admin.password-change');
     Route::post('/admin-password-update', [AdminProfileController::class, 'adminPasswordUpdate'])->name('admin.password-update');
 
+    // Slider Route
+    Route::resource('sliders', SliderController::class);
 
 });
 

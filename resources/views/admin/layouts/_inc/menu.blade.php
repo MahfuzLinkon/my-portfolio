@@ -38,13 +38,13 @@
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarEcommerce" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
                     <i class="uil-store"></i>
-                    <span> Products Module </span>
+                    <span> Slider Module </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarEcommerce">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="apps-ecommerce-products.html">Products</a>
+                            <a href="{{ route('sliders.index') }}">Manage Slider</a>
                         </li>
                         <li>
                             <a href="apps-ecommerce-products-details.html">Products Details</a>
@@ -62,7 +62,7 @@
                 <div class="collapse" id="sidebarEmail">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="">Category</a>
+                            <a href="#">Category</a>
                         </li>
                         <li>
                             <a href="apps-email-read.html">Sub Category</a>
