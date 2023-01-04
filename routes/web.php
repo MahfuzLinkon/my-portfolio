@@ -29,6 +29,7 @@ Route::middleware(['auth', 'verified'])->group(function(){
 
     // Slider Route
     Route::resource('sliders', SliderController::class);
+    Route::get('/slider/active/{id}', [SliderController::class, 'sliderActive'])->name('slider.active');
 
 });
 
@@ -39,6 +40,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::get('/phpinfo', function() {
+    return phpinfo();
 });
 
 require __DIR__.'/auth.php';

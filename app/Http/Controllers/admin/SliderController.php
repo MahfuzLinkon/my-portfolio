@@ -67,7 +67,9 @@ class SliderController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.slider.edit', [
+            'slider' => Slider::find($id),
+        ]);
     }
 
     /**
@@ -79,7 +81,13 @@ class SliderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'short_description' => 'required',
+            'link' => 'required',
+        ]);
+        Slider::sliderUpdateOrCreate($request, $id);
+        return redirect()->route('sliders.index')->with('success', 'Slider Updated Successfully');
     }
 
     /**
@@ -90,6 +98,28 @@ class SliderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $slider = Slider::where('id', $id)->first();
+        if($slider->image){
+            if(file_exists($slider->image)){
+                unlink($slider->image);
+            }
+        }
+        $slider->delete();
+        return redirect()->route('sliders.index')->with('success', 'Slider Deleted Successfully');
+    }
+
+    public function sliderActive($id){
+        $sliders = Slider::all();
+            foreach($sliders as $item){
+                if($item->id == $id){
+                    $item->status = 1;
+                }
+                if($item->id != $id){
+                    $item->status = 0;
+                }
+                $item->save();
+            }
+        
+        return redirect()->back()->with('success', 'Slider Status Changed');
     }
 }

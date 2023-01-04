@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Facades\Auth;
+use App\helper\Helper;
+
 
 class Slider extends Model
 {
@@ -25,11 +27,11 @@ class Slider extends Model
 
     public static function sliderUpdateOrCreate($request, $id = null){
         Slider::updateOrCreate(['id'=> $id], [
-            'user_id' => Auth::user()->id,
+            'user_id' => empty($id) ? Auth::user()->id : Slider::find($id)->user_id,
             'title' => $request->title,
             'short_description' => $request->short_description,
             'link' => $request->link,
-            'image' => $request->image,
+            'image' => Helper::interventionImage($request->image, 'sliders', isset($id) ? Slider::find($id)->image : null , 636, 852),
         ]);
     }
 

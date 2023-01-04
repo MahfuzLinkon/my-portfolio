@@ -61,7 +61,7 @@
                     <div class="row mt-3">
                         <label for="" class="col-md-3"></label>
                         <div class="col-md-9">
-                            <input type="submit" class="btn btn-success" value="Create Slider" id="image">
+                            <input type="submit" class="btn btn-success" value="Create Slider">
                         </div>
                     </div>
                 </form>

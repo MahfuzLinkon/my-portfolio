@@ -31,14 +31,18 @@
                                 <td>{{ $slider->title }}</td>
                                 <td>{{ $slider->user->name }}</td>
                                 <td>{{ $slider->short_description }}</td>
-                                <td>{{ $slider->status == 1 ? 'Publishes' : 'Unpublished' }}</td>
+                                <td>{{ $slider->status == 1 ? 'Published' : 'Unpublished' }}</td>
                                 <td>
                                     <img src="{{ asset($slider->image) }}" alt="" style="height: 80px; width:80x;">
                                 </td>
                                 <td>
-                                    <a href="" class="btn btn-success"><i class="uil-arrow-up"></i></a>
-                                    <a href="" class="btn btn-info"><i class="uil-edit"></i></a>
-                                    <a href="" class="btn btn-danger"><i class="uil-trash"></i></a>
+                                    <a href="{{ route('slider.active', ['id' => $slider->id]) }}" class="btn btn-{{ $slider->status == 1 ? 'warning' : 'success' }}" title="Make Active"><i class="uil-arrow-{{ $slider->status == 1 ? 'down' : 'up' }}"></i></a>
+                                    <a href="{{ route('sliders.edit', $slider->id) }}" class="btn btn-info"><i class="uil-edit"></i></a>
+                                    <form method="post" onsubmit="return confirm('Are you sure want to delete this?')" style="display: inline-block" action="{{ route('sliders.destroy', $slider->id) }}">
+                                        @csrf 
+                                        @method('delete')
+                                        <button class="btn btn-danger"><i class="uil-trash"></i></button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
