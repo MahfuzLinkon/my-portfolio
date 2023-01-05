@@ -55,17 +55,20 @@
 
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
-                    <i class="uil-envelope"></i>
-                    <span> Category Module </span>
+                    <i class="uil-user"></i>
+                    <span> About Module </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarEmail">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="#">Category</a>
+                            <a href="{{ route('abouts.index') }}">Manage About</a>
                         </li>
                         <li>
-                            <a href="apps-email-read.html">Sub Category</a>
+                            <a href="apps-email-read.html">Manage Skills</a>
+                        </li>
+                        <li>
+                            <a href="apps-email-read.html">Manage Education</a>
                         </li>
                     </ul>
                 </div>

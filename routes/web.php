@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\AboutController;
 use App\Http\Controllers\admin\AdminProfileController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\SliderController;
@@ -17,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/', [FrontendController::class, 'index'])->name('front.home');
+Route::get('/about', [FrontendController::class, 'about'])->name('front.about');
 
 Route::middleware(['auth', 'verified'])->group(function(){
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
@@ -30,7 +32,8 @@ Route::middleware(['auth', 'verified'])->group(function(){
     // Slider Route
     Route::resource('sliders', SliderController::class);
     Route::get('/slider/active/{id}', [SliderController::class, 'sliderActive'])->name('slider.active');
-
+    // About Route
+    Route::resource('abouts', AboutController::class);
 });
 
 
@@ -42,8 +45,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/phpinfo', function() {
-    return phpinfo();
-});
+// Route::get('/phpinfo', function() {
+//     return phpinfo();
+// });
 
 require __DIR__.'/auth.php';

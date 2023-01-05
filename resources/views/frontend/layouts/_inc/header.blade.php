@@ -50,8 +50,8 @@
 
                             <div class="navbar__wrap main__menu d-none d-xl-flex">
                                 <ul class="navigation">
-                                    <li class="active"><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About</a></li>
+                                    <li class=""><a href="{{ route('front.home') }}">Home</a></li>
+                                    <li><a href="{{ route('front.about') }}">About</a></li>
                                     <li><a href="services-details.html">Services</a></li>
                                     <li class="menu-item-has-children"><a href="#">Portfolio</a>
                                         <ul class="sub-menu">
