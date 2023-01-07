@@ -228,7 +228,6 @@
                                         <a href="portfolio-details.html" class="link">Case Study</a>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>

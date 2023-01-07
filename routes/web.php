@@ -4,6 +4,8 @@ use App\Http\Controllers\admin\AboutController;
 use App\Http\Controllers\admin\AboutMultiImageController;
 use App\Http\Controllers\admin\AdminProfileController;
 use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\admin\ProjectCategoryController;
+use App\Http\Controllers\admin\ProjectController;
 use App\Http\Controllers\admin\SliderController;
 use App\Http\Controllers\frontend\FrontendController;
 use App\Http\Controllers\ProfileController;
@@ -37,6 +39,12 @@ Route::middleware(['auth', 'verified'])->group(function(){
     Route::resource('abouts', AboutController::class);
     Route::resource('about-images', AboutMultiImageController::class);
     Route::get('/multi-image/status/{id}', [AboutMultiImageController::class, 'multiImageStatus'])->name('multi-image.status');
+
+    // ------------------------------Project ----------- All Route 
+    // Project category route
+    Route::resource('project-categories', ProjectCategoryController::class);
+    // Project  route
+    Route::resource('projects', ProjectController::class);
 
 });
 

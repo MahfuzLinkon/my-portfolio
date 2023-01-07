@@ -80,22 +80,16 @@
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarProjects" aria-expanded="false" aria-controls="sidebarProjects" class="side-nav-link">
                     <i class="uil-briefcase"></i>
-                    <span> Projects </span>
+                    <span> Projects Module </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarProjects">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="apps-projects-list.html">List</a>
+                            <a href="{{ route('project-categories.index') }}">Project Category</a>
                         </li>
                         <li>
-                            <a href="apps-projects-details.html">Details</a>
-                        </li>
-                        <li>
-                            <a href="apps-projects-gantt.html">Gantt <span class="badge rounded-pill bg-light text-dark font-10 float-end">New</span></a>
-                        </li>
-                        <li>
-                            <a href="apps-projects-add.html">Create Project</a>
+                            <a href="{{ route('projects.index') }}">Manage Project</a>
                         </li>
                     </ul>
                 </div>
