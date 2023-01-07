@@ -35,7 +35,7 @@
                                 <td>
                                     <img src="{{ asset($slider->image) }}" alt="" style="height: 80px; width:80x;">
                                 </td>
-                                <td class="s">
+                                <td width="15%">
                                     <a href="{{ route('slider.active', ['id' => $slider->id]) }}" class="btn btn-{{ $slider->status == 1 ? 'warning' : 'success' }}" title="Make Active"><i class="uil-arrow-{{ $slider->status == 1 ? 'down' : 'up' }}"></i></a>
                                     <a href="{{ route('sliders.edit', $slider->id) }}" class="btn btn-info"><i class="uil-edit"></i></a>
                                     <form method="post" onsubmit="return confirm('Are you sure want to delete this?')" style="display: inline-block" action="{{ route('sliders.destroy', $slider->id) }}">

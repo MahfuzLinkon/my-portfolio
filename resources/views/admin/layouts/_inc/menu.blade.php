@@ -65,6 +65,9 @@
                             <a href="{{ route('abouts.index') }}">Manage About</a>
                         </li>
                         <li>
+                            <a href="{{ route('about-images.index') }}">Manage Image</a>
+                        </li>
+                        <li>
                             <a href="apps-email-read.html">Manage Skills</a>
                         </li>
                         <li>

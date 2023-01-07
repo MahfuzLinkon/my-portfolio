@@ -1,7 +1,7 @@
 <section class="user_menu">
             <small>
                 <div class="navbar p-0" style="background-color: #EAE8E7;">
-                    <div class="container">
+                    <div class="container custom-container">
                         <ul class="nav">
                             <li><a href="" class="nav-link text-muted"><i class="fa-solid fa-address-card me-1"></i> My Account</a></li>
                             <li class="">
@@ -35,7 +35,7 @@
 
 <header >
     <div id="sticky-header" class="menu__area transparent-header">
-        <div class="container "> 
+        <div class="container custom-container"> 
             <div class="row">
                 <div class="col-12">
                     <div class="mobile__nav__toggler"><i class="fas fa-bars"></i></div>
@@ -45,7 +45,6 @@
                                 {{-- <a href="index.html" class="logo__black"><img src="{{ asset('/') }}frontend/assets/img/logo/logo_black.png" alt=""></a> --}}
                                 {{-- <a href="index.html" class="logo__white"><img src="{{ asset('/') }}frontend/assets/img/logo/logo_white.png" alt=""></a> --}}
                                 <a href="{{ route('front.home') }}" class="text-black fw-bold display-6"><i>Linkon's</i><span class="text-primary">Yard</span></a>
-
                             </div>
 
                             <div class="navbar__wrap main__menu d-none d-xl-flex">

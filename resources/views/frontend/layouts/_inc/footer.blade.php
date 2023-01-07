@@ -1,5 +1,5 @@
 <footer class="footer">
-    <div class="container">
+    <div class="container custom-container">
         <div class="row justify-content-between">
             <div class="col-lg-4">
                 <div class="footer__widget">
