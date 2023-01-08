@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 use App\Models\About;
+use App\Models\Project;
 
 class FrontendController extends Controller
 {
@@ -13,6 +14,7 @@ class FrontendController extends Controller
         return view('frontend.home.index', [
             'slider' => Slider::where('status', 1)->first(),
             'about' => About::first(),
+            'projects' => Project::where('status', 1)->orderBy('id', "DESC")->get(),
         ]);
     }
 
@@ -22,6 +24,11 @@ class FrontendController extends Controller
         ]);
     }
 
+    public function portfolioDetails($id){
+        return view('frontend.portfolio.portfolio-details', [
+            'portfolio' => Project::where('id', $id)->first(),
+        ]);
+    }
     
 
 

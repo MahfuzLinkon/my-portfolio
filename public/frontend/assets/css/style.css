@@ -1956,17 +1956,17 @@ Breadcrumb
         margin-top: 0;
         text-align: center; } }
     .banner__content .title {
-      font-size: 45px;
+      font-size: 35px;
       line-height: 1.15;
       letter-spacing: -0.01em;
       text-transform: inherit;
       margin-bottom: 30px; }
       @media (max-width: 1500px) {
         .banner__content .title {
-          font-size: 58px; } }
+          font-size: 40px; } }
       @media (max-width: 1199.98px) {
         .banner__content .title {
-          font-size: 48px;
+          font-size: 40px;
           margin-bottom: 20px; } }
       @media (max-width: 767.98px) {
         .banner__content .title {
@@ -2006,7 +2006,8 @@ Breadcrumb
       .banner__img {
         margin-bottom: 30px; } }
     .banner__img img {
-      max-width: 80%; }
+      max-width: 100%;
+    }
       @media (max-width: 1500px) {
         .banner__img img {
           max-width: 75%; } }

@@ -1,16 +1,26 @@
 <footer class="footer">
     <div class="container custom-container">
         <div class="row justify-content-between">
-            <div class="col-lg-4">
+            <div class="col-lg-4" style="margin-top:100px ">
                 <div class="footer__widget">
                     <div class="fw-title">
-                        <h5 class="sub-title">Contact us</h5>
-                        <h4 class="title">+81383 766 284</h4>
+                        <h5 class="sub-title">Contact me</h5>
+                        <p class="">+81383 766 284</p>
+                        <p class="">Admin@admin.com</p>
+
                     </div>
                     <div class="footer__widget__text">
-                        <p>There are many variations of passages of lorem ipsum
-                        available but the majority have suffered alteration
-                        in some form is also here.</p>
+                        
+                    </div>
+                    <div class="footer__widget__social">
+                        <p>Follow me</p>
+                        <ul class="footer__social__list">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            {{-- <li><a href="#"><i class="fab fa-behance"></i></a></li> --}}
+                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -28,24 +38,6 @@
                     </div>
                 </div>
             </div>
-            {{-- <div class="col-xl-3 col-lg-4 col-sm-6">
-                <div class="footer__widget">
-                    <div class="fw-title">
-                        <h5 class="sub-title">Follow me</h5>
-                        <h4 class="title">socially connect</h4>
-                    </div>
-                    <div class="footer__widget__social">
-                        <p>Lorem ipsum dolor sit amet enim. <br> Etiam ullamcorper.</p>
-                        <ul class="footer__social__list">
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-behance"></i></a></li>
-                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div> --}}
         </div>
         <div class="copyright__wrap">
             <div class="row">

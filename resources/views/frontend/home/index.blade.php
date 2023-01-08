@@ -14,6 +14,7 @@
                 </div>
                 <div class="col-xl-5 col-lg-6">
                     <div class="banner__content">
+                        <h4 class="wow fadeInUp" data-wow-delay=".2s">I'M,</h4>
                         <h5 class="title wow fadeInUp" data-wow-delay=".2s">{{ $slider->title }}</h5>
                         <p class="wow fadeInUp" data-wow-delay=".4s">{{ $slider->short_description }}</p>
                         <a href="{{ route('front.about') }}" class="btn banner__btn wow fadeInUp" data-wow-delay=".6s">more about me</a>
@@ -40,30 +41,6 @@
                             <img class="light" src="{{ asset('/') }}frontend/assets/img/icons/xd_light.png" alt="XD">
                             <img class="dark" src="{{ asset('/') }}frontend/assets/img/icons/xd.png" alt="XD">
                         </li>
-                        <li>
-                            <img class="light" src="{{ asset('/') }}frontend/assets/img/icons/skeatch_light.png" alt="Skeatch">
-                            <img class="dark" src="{{ asset('/') }}frontend/assets/img/icons/skeatch.png" alt="Skeatch">
-                        </li>
-                        <li>
-                            <img class="light" src="{{ asset('/') }}frontend/assets/img/icons/illustrator_light.png" alt="Illustrator">
-                            <img class="dark" src="{{ asset('/') }}frontend/assets/img/icons/illustrator.png" alt="Illustrator">
-                        </li>
-                        <li>
-                            <img class="light" src="{{ asset('/') }}frontend/assets/img/icons/hotjar_light.png" alt="Hotjar">
-                            <img class="dark" src="{{ asset('/') }}frontend/assets/img/icons/hotjar.png" alt="Hotjar">
-                        </li>
-                        <li>
-                            <img class="light" src="{{ asset('/') }}frontend/assets/img/icons/invision_light.png" alt="Invision">
-                            <img class="dark" src="{{ asset('/') }}frontend/assets/img/icons/invision.png" alt="Invision">
-                        </li>
-                        <li>
-                            <img class="light" src="{{ asset('/') }}frontend/assets/img/icons/photoshop_light.png" alt="Photoshop">
-                            <img class="dark" src="{{ asset('/') }}frontend/assets/img/icons/photoshop.png" alt="Photoshop">
-                        </li>
-                        <li>
-                            <img class="light" src="{{ asset('/') }}frontend/assets/img/icons/figma_light.png" alt="Figma">
-                            <img class="dark" src="{{ asset('/') }}frontend/assets/img/icons/figma.png" alt="Figma">
-                        </li>
                     </ul>
                 </div>
                 <div class="col-lg-6">
@@ -74,7 +51,7 @@
                         </div>
                         <div class="about__exp">
                             <div class="about__exp__icon">
-                                <img src="{{ asset('/') }}frontend/assets/img/icons/about_icon.png" alt="">
+                                <img class="mx-auto" src="{{ asset('/') }}frontend/assets/img/icons/about_icon.png" alt="">
                             </div>
                             <div class="about__exp__content">
                                 <p>{{ $about->long_title }}</p>
@@ -196,16 +173,18 @@
                     <div class="row gx-0 justify-content-center">
                         <div class="col">
                             <div class="portfolio__active">
-                                <div class="portfolio__item">
+                                @foreach ($projects as $project)
+                                    <div class="portfolio__item">
                                     <div class="portfolio__thumb">
-                                        <img src="{{ asset('/') }}frontend/assets/img/portfolio/portfolio_img01.jpg" alt="">
+                                        <img src="{{ asset($project->image) }}" alt="">
                                     </div>
                                     <div class="portfolio__overlay__content">
-                                        <span>Apps Design</span>
-                                        <h4 class="title"><a href="portfolio-details.html">Banking Management System</a></h4>
-                                        <a href="portfolio-details.html" class="link">Case Study</a>
+                                        <span>{{ $project->category->name }}</span>
+                                        <h4 class="title"><a href="portfolio-details.html">{{ $project->name }}</a></h4>
+                                        <a href="{{ route('front.portfolio-details', ['id' =>$project->id]) }}" class="link">Case Study</a>
                                     </div>
                                 </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>

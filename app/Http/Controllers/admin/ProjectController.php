@@ -101,4 +101,26 @@ class ProjectController extends Controller
         $this->project->delete();
         return redirect()->back()->with('success', 'Project Deleted Successfully');
     }
+
+    public function changeStatus($id){
+        $project = Project::find($id);
+        if($project->status == 1){
+            $project->status = 0;
+        }else{
+            $project->status = 1;
+        }
+        $project->save();
+        return redirect()->back()->with('success', 'Project Status Successfully');
+    }
+
+
+
+
+
+
+
+
+
+
+
 }

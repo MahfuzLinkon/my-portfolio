@@ -31,7 +31,7 @@ class Slider extends Model
             'title' => $request->title,
             'short_description' => $request->short_description,
             'link' => $request->link,
-            'image' => Helper::interventionImage($request->image, 'sliders', isset($id) ? Slider::find($id)->image : null , 636, 852),
+            'image' => Helper::interventionImage($request->image, 'sliders', isset($id) ? Slider::find($id)->image : null , 1100, 1200),
         ]);
     }
 

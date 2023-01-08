@@ -42,6 +42,8 @@
                                 </td>
                                 <td>{{ $project->status == 1 ? 'Published' : 'Unpublished' }}</td>
                                 <td>
+
+                                    <a href="{{ route('projects.change-status', ['id' => $project->id]) }}" class="btn btn-{{ $project->status == 1 ? 'warning' : 'success' }}"><i class="uil-arrow-{{ $project->status == 1 ? 'down' : 'up' }}"></i></a>
                                     <a href="{{ route('projects.edit', $project->id) }}" class="btn btn-info"><i class="uil-edit"></i></a>
                                     <form method="post" onsubmit="return confirm('Are you sure want to delete this?')" style="display: inline-block" action="{{ route('projects.destroy', $project->id) }}">
                                         @csrf 

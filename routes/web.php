@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FrontendController::class, 'index'])->name('front.home');
 Route::get('/about', [FrontendController::class, 'about'])->name('front.about');
+Route::get('/portfolio/details/{id}', [FrontendController::class, 'portfolioDetails'])->name('front.portfolio-details');
 
 Route::middleware(['auth', 'verified'])->group(function(){
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
@@ -45,6 +46,7 @@ Route::middleware(['auth', 'verified'])->group(function(){
     Route::resource('project-categories', ProjectCategoryController::class);
     // Project  route
     Route::resource('projects', ProjectController::class);
+    Route::get('/projects/change-status/{id}', [ProjectController::class, 'changeStatus'])->name('projects.change-status');
 
 });
 
