@@ -96,38 +96,33 @@
             </li>
 
             <li class="side-nav-item">
-                <a href="apps-social-feed.html" class="side-nav-link">
-                    <i class="uil-rss"></i>
-                    <span> Social Feed </span>
-                </a>
-            </li>
-
-            <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarTasks" aria-expanded="false" aria-controls="sidebarTasks" class="side-nav-link">
                     <i class="uil-clipboard-alt"></i>
-                    <span> Tasks </span>
+                    <span> Footer Module </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarTasks">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="apps-tasks.html">List</a>
-                        </li>
-                        <li>
-                            <a href="apps-tasks-details.html">Details</a>
-                        </li>
-                        <li>
-                            <a href="apps-kanban.html">Kanban Board</a>
+                            <a href="{{ route('footers.index') }}">Manage Footer</a>
                         </li>
                     </ul>
                 </div>
             </li>
 
             <li class="side-nav-item">
-                <a href="apps-file-manager.html" class="side-nav-link">
-                    <i class="uil-folder-plus"></i>
-                    <span> File Manager </span>
+                <a data-bs-toggle="collapse" href="#sidebarContact" aria-expanded="false" aria-controls="sidebarContact" class="side-nav-link">
+                    <i class="uil-message"></i>
+                    <span> Contact Module </span>
+                    <span class="menu-arrow"></span>
                 </a>
+                <div class="collapse" id="sidebarContact">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="{{ route('manage.message') }}">Manage Messages</a>
+                        </li>
+                    </ul>
+                </div>
             </li>
 
 

@@ -25,9 +25,9 @@
         <div class="scroll__down">
             <a href="#aboutSection" class="scroll__link">Scroll down</a>
         </div>
-        <div class="banner__video">
+        {{-- <div class="banner__video">
             <a href="{{ $slider->link }}" class="popup-video"><i class="fas fa-play"></i></a>
-       </div>
+       </div> --}}
     </section>
     <!-- banner-area-end -->
 
@@ -37,10 +37,12 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <ul class="about__icons__wrap">
+                        @foreach ($aboutImages as $aboutImage)
                         <li>
-                            <img class="light" src="{{ asset('/') }}frontend/assets/img/icons/xd_light.png" alt="XD">
-                            <img class="dark" src="{{ asset('/') }}frontend/assets/img/icons/xd.png" alt="XD">
+                            <img class="light" src="{{ asset($aboutImage->image) }}" alt="XD">
+                            <img class="dark" src="{{ asset($aboutImage->image) }}" alt="XD">
                         </li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="col-lg-6">

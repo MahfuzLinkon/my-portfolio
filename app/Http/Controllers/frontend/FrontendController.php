@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 use App\Models\About;
+use App\Models\AboutMultiImage;
 use App\Models\Project;
 
 class FrontendController extends Controller
@@ -15,6 +16,7 @@ class FrontendController extends Controller
             'slider' => Slider::where('status', 1)->first(),
             'about' => About::first(),
             'projects' => Project::where('status', 1)->orderBy('id', "DESC")->get(),
+            'aboutImages' => AboutMultiImage::where('status', 1)->orderBy('id', 'DESC')->get(),
         ]);
     }
 

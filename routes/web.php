@@ -3,10 +3,13 @@
 use App\Http\Controllers\admin\AboutController;
 use App\Http\Controllers\admin\AboutMultiImageController;
 use App\Http\Controllers\admin\AdminProfileController;
+use App\Http\Controllers\admin\BackendMessageController;
 use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\admin\FooterController;
 use App\Http\Controllers\admin\ProjectCategoryController;
 use App\Http\Controllers\admin\ProjectController;
 use App\Http\Controllers\admin\SliderController;
+use App\Http\Controllers\frontend\ContactController;
 use App\Http\Controllers\frontend\FrontendController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +26,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [FrontendController::class, 'index'])->name('front.home');
 Route::get('/about', [FrontendController::class, 'about'])->name('front.about');
 Route::get('/portfolio/details/{id}', [FrontendController::class, 'portfolioDetails'])->name('front.portfolio-details');
+
+// frontend Contact route 
+Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
+Route::post('/store/message', [ContactController::class, 'storeMessage'])->name('store.message');
+
 
 Route::middleware(['auth', 'verified'])->group(function(){
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
@@ -47,9 +55,13 @@ Route::middleware(['auth', 'verified'])->group(function(){
     // Project  route
     Route::resource('projects', ProjectController::class);
     Route::get('/projects/change-status/{id}', [ProjectController::class, 'changeStatus'])->name('projects.change-status');
-
+    // footer route
+    Route::resource('footers', FooterController::class);
+    // Backend Message All Route 
+    Route::get('/admin-message', [BackendMessageController::class, 'manageMessage'])->name('manage.message');
+    Route::get('/read-message/{id}', [BackendMessageController::class, 'readMessage'])->name('read.message');
+    Route::get('/delete-message/{id}', [BackendMessageController::class, 'deleteMessage'])->name('delete.message');
 });
-
 
 
 

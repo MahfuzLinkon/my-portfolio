@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\FrontendFooter;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +25,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        //Share Footer information 
+        View::composer('frontend.layouts._inc.footer', function($view){
+            $view->with('frontendFooter', FrontendFooter::first());
+        });
     }
 }
